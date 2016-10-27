@@ -1,0 +1,64 @@
+c= 6.52475E-5
+b= 0.79286E-5
+ni =0.03845948E5
+beta = 1.26E-5
+delta = 0.1
+lamb = 14
+
+escala = 200000
+c= 1/escala
+b= 3/escala
+ni = 0.01*escala
+beta = 3.4/escala
+delta = 0.1
+lamb = 14
+
+### Novas equações ###
+c = 1E-5
+b = 3E-5
+ni = 0.252
+beta = 0.00001705
+delta = 0.0001352
+lamb = 0.000896
+
+
+c = 1
+b = 3
+ni = 25179
+beta = 0.00001707
+lamb = 89.65
+delta = 13.52
+
+c=3
+b=1
+lamb=32.55
+delta=0.62989
+beta=0.0000156719
+ni=8394
+
+## Deu bom esse ##
+c=5
+b=1
+beta = 1.4767E-5
+delta = 0.40427
+lamb = 34.55
+ni = 8.39407E3
+
+
+## Consegui b>c mas não bateu certinho ##
+c=1
+b=8
+beta = 1.71E-5
+delta = 1.1
+lamb = 150
+ni = 4.1967E4
+
+
+
+
+
+
+b = 5.3066966E62/1.930E62
+c = 9.0204E61/1.930E62
+delta = 3.4047788E78/8.0804E76
+lamb = 1.6311E42/1.980E40
