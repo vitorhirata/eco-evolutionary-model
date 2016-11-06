@@ -1,15 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-c=0.1
-b=4
-beta = 1.73E-5
-delta = 10.1
-lamb = 84
-ni = 10.1967E4
+c=1
+b=8
+beta = 1.71E-5
+delta = 1.16363
+lamb = 150.068
+ni = 314.461
+r=132.659
 
 def p3(N):
-    return (ni-delta*N*(1-N*beta))/(N*((b-c)+(lamb-delta)*(1-N*beta)))
+    return (ni-delta*(N/r-1)*(1-N*beta))/((N/r-1)*(b-c+(lamb-delta)*(1-N*beta)))
 
 N = np.logspace(1, 5, 10000)
 

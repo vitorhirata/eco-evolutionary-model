@@ -54,11 +54,34 @@ lamb = 150
 ni = 4.1967E4
 
 
+## Chute melhor com strong alle ##
+c=1
+b=8
+beta = 1.71E-5
+delta = 1.1
+lamb = 150.0
+ni = 4.1967E3
+r = 10
+
+
+## Para o alee, n2=500, tem que ver se o resto da certo ##
+c=1
+b=8
+beta = 1.71E-5
+delta = 1.16363
+lamb = 150.068
+ni = 314.461
+r=132.659
 
 
 
 
-b = 5.3066966E62/1.930E62
-c = 9.0204E61/1.930E62
-delta = 3.4047788E78/8.0804E76
-lamb = 1.6311E42/1.980E40
+
+
+function f!(x, fvec)
+  fvec[1] = ((x[1]+b-c) +sqrt(((x[1]+b-c))^2-4*x[3]*x[1]*x[4]))/(2*x[3]*x[1])-n1
+  fvec[2] = ((x[1]+b-c) -sqrt(((x[1]+b-c))^2-4*x[3]*x[1]*x[4]))/(2*x[3]*x[1])-n1-n2
+  u = (x[1]-x[2]-c)/(x[3]*(x[1]-x[2]))
+  fvec[3] = u-n3
+  fvec[4] = (x[4]-x[2]*u*(1-x[3]*u))/(u*(b-c+(1-x[3]*u)*(x[1]-x[2])))-p
+end

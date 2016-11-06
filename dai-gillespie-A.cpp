@@ -1,4 +1,9 @@
-  #include <iostream>
+/* Simula o algoritmo de Gillespie, resolvendo as equacoes de Dai et all
+ * o resultado eh salvo em um arquivo de texto  */
+
+
+
+#include <iostream>
 #include <random>
 #include <fstream>
 #include <cmath>

@@ -1,4 +1,6 @@
-  #include <iostream>
+/* Adds the death rate */
+
+#include <iostream>
 #include <random>
 #include <fstream>
 #include <cmath>
