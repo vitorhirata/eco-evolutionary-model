@@ -74,14 +74,48 @@ ni = 314.461
 r=132.659
 
 
+###  Bateu tudo certinho com o experimental  ####
+c=1.0
+b=5.0799
+beta = 1.7185E-5
+delta = 1.6369
+lamb = 150.54
+ni = 73.90
+r=348.145
+
+
+#### Normalizando o tempo   #####
+c=0.00045
+b=0.002285955
+beta = 0.000017185
+delta = 0.000736605
+lamb = 0.067743
+ni = 0.033255
+r=348.145
+
+
+#Parametro para o unidimensional, primeiro teste:
+c=1.0
+b=5.0799
+beta = 6.08E-6
+delta = 1.6369
+lamb = 150.54
+ni = 73.90
+r=348.145
+
+
+#Parametro para o unidimensional, segundo teste, promissor:
+c=1.0
+b=5.0799
+beta = 5.831E-6
+delta = 1.6369
+lamb = 150.54
+ni = 2480.0 #507.21 # 2480.0
+r=348.145
 
 
 
 
-function f!(x, fvec)
-  fvec[1] = ((x[1]+b-c) +sqrt(((x[1]+b-c))^2-4*x[3]*x[1]*x[4]))/(2*x[3]*x[1])-n1
-  fvec[2] = ((x[1]+b-c) -sqrt(((x[1]+b-c))^2-4*x[3]*x[1]*x[4]))/(2*x[3]*x[1])-n1-n2
-  u = (x[1]-x[2]-c)/(x[3]*(x[1]-x[2]))
-  fvec[3] = u-n3
-  fvec[4] = (x[4]-x[2]*u*(1-x[3]*u))/(u*(b-c+(1-x[3]*u)*(x[1]-x[2])))-p
-end
+Pontos fixos:
+
+(516+-47, 1.0), (57800, 0.086), (59600,1.0)
