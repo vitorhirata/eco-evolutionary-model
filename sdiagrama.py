@@ -83,11 +83,14 @@ x0.append([4100, 0.1])
 x0.append([3000, 0.5])
 x0.append([500, 0.4])
 x0.append([400, 0.1])
-x0.append([180, 0.8])
+x0.append([330, 0.88])
 x0.append([300, 0.6])
 x0.append([1393.0, 0.01])
 x0.append([440, 1])
 x0.append([600, 1])
+x0.append([17000, 0.25])
+x0.append([450, 0.75])
+x0.append([670, 0.2])
 
 
 def p3(N):
@@ -114,7 +117,7 @@ def LV(x, t, b, c, beta, delta, lamb, ni, r):
 fig, ax = plt.subplots(1, 1)
 
 
-for i in range(12):
+for i in range(15):
     X = odeint(LV, x0[i], t, (b, c, beta, delta, lamb, ni, r))
 
     x = X[:,0]
@@ -129,7 +132,7 @@ for i in range(12):
 # Coloca a nullcline
 N = np.arange(400, 40000, 1)
 #plot(N,p3(N),'b',linewidth=3)
-plt.plot(N,p33(N),'r',linewidth=2)
+plt.plot(N,p33(N),'k--',linewidth=1.5) # 'r-'
 #Coloca pontos
 plt.plot([516,57800,59600],[1,0.086,1],'ko')
 

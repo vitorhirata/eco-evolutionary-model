@@ -7,7 +7,7 @@ b=5.0799
 beta = 5.831E-6
 delta = 1.6369
 lamb = 150.54
-ni = 507.21 # 507.21 ou 2480.0
+ni = 2480.0 # 507.21 ou 2480.0
 r=348.145
 
 T=.0004
@@ -25,8 +25,6 @@ nmenos = ((lamb+b-c)/r + lamb*beta-sqrt(((lamb+b-c)/r + lamb*beta)**2-4*lamb*bet
 nc_init = 800
 x0 = array([nc_init])
 
-print(nmenos)
-
 def LV(x, t, b, c, beta, ni, lamb, r):
     return array([x[0]*(x[0]/r-1)*(b-c+lamb*(1-x[0]*beta))-ni*x[0] ])
 
@@ -34,17 +32,17 @@ for i in range(0,18):
     x0 = array([nc_init*pow(1.5,i)])
     x = odeint(LV, x0, t, (b,c, beta, ni, lamb, r))
     if x0[0] < nmenos:
-        plt.semilogy(t, x, 'r-')
+        plt.semilogy(t, x, 'k--') # 'r-'
     else:
-        plt.semilogy(t, x, 'b-')
+        plt.semilogy(t, x, 'k:') #'b-'
 
 x0 = array([nmenos-50])
 x = odeint(LV, x0, t, (b,c, beta, ni, lamb, r))
-plt.semilogy(t, x, 'r-')
+plt.semilogy(t, x, 'k--') # 'r-'
 
 x0 = array([nmenos+50])
 x = odeint(LV, x0, t, (b,c, beta, ni, lamb, r))
-plt.semilogy(t, x, 'b-')
+plt.semilogy(t, x, 'k:') #'b-'
 
 ni=ni/T
 plt.ylim(500,1100000)

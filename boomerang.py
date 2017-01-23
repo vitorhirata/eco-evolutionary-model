@@ -28,8 +28,8 @@ for i in range(0,len(ni)):
             niInst.append(ni[i]) #niInst.append(k1*ni[i]+k2*ni[i]*ni[i])
 
 
-plt.semilogy(niEst, Nestavel,'b', linewidth=2)
-plt.semilogy(niInst, Ninstavel, 'r', linewidth=2)
+plt.semilogy(niEst, Nestavel,'k:', linewidth=2) # 'b-'
+plt.semilogy(niInst, Ninstavel, 'k--', linewidth=2) # 'r-'
 plt.xlabel(r"Dilution ($ \nu $)")
 plt.ylabel("Population (N)")
 #plt.ylim(150,1000000)

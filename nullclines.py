@@ -15,11 +15,11 @@ def p3(N):
 N = np.logspace(2.6, 4.7756, 100000)
 
 plt.figure()
-plt.plot(N, p3(N), 'r')
-plt.axhline(y=1,color='c')
-plt.axhline(y=0,color='c')
-plt.axvline(x=(lamb-delta-c)/(beta*(lamb-delta)),color='c')
-plt.axvline(x=r,color='c')
+plt.plot(N, p3(N), 'k-') # 'r-'
+plt.axhline(y=1, color='k', linestyle = '--') # color='c'
+plt.axhline(y=0,color='k', linestyle = '--') # color='c'
+plt.axvline(x=(lamb-delta-c)/(beta*(lamb-delta)),color='k', linestyle = '--') # color='c'
+plt.axvline(x=r,color='k', linestyle = '--') # color='c'
 plt.plot([516,57800,59600],[1,0.086,1],'ko')
 #plt.title('Nullclines')
 plt.xlabel("Population (N)")
