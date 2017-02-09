@@ -53,50 +53,50 @@ int main(){
 
     while(dia < 41){
       t = t + h;
-        if(t > 3){
-          if (Nc < Ncrit){
-            k1C = h * f1(Nc, Nd);
-            k2C = h * f1(Nc + k1C / 2, Nd);
-            k3C = h * f1(Nc + k2C / 2, Nd);
-            k4C = h * f1(Nc + k3C, Nd);
-            k1D = h * g1(Nc, Nd);
-            k2D = h * g1(Nc, Nd + k1D / 2);
-            k3D = h * g1(Nc, Nd + k2D / 2);
-            k4D = h * g1(Nc, Nd + k3D);
-            Nc = Nc + (k1C + 2 * k2C + 2 * k3C + k4C) / 6;
-            Nd = Nd + (k1D + 2 * k2D + 2 * k3D + k4D) / 6;
-         }
-         else{
-            k1C = h * f2(Nc, Nd);
-            k2C = h * f2(Nc + k1C / 2, Nd);
-            k3C = h * f2(Nc + k2C / 2, Nd);
-            k4C = h * f2(Nc + k3C, Nd);
-            k1D = h * g2(Nc, Nd);
-            k2D = h * g2(Nc, Nd + k1D / 2);
-            k3D = h * g2(Nc, Nd + k2D / 2);
-            k4D = h * g2(Nc, Nd + k3D);
-            Nc = Nc + (k1C + 2 * k2C + 2 * k3C + k4C) / 6;
-            Nd = Nd + (k1D + 2 * k2D + 2 * k3D + k4D) / 6;
-         }
-         if(fabs(t-23.5) < EPS){ // Se tiver no tempo 23.5 horas
-           switch (i) {
-             case 0: fprintf(dados1, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 1: fprintf(dados2, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 2: fprintf(dados3, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 3: fprintf(dados4, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 4: fprintf(dados5, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 5: fprintf(dados6, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 6: fprintf(dados7, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 7: fprintf(dados8, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 8: fprintf(dados9, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-             case 9: fprintf(dados10, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
-            }
-            t = 0;
-            dia++;
-            Nc = Nc / Df;
-            Nd = Nd / Df;
-         }
-       }// if t > 3
+      if(t > 3){
+        if (Nc < Ncrit){
+          k1C = h * f1(Nc, Nd);
+          k2C = h * f1(Nc + k1C / 2, Nd);
+          k3C = h * f1(Nc + k2C / 2, Nd);
+          k4C = h * f1(Nc + k3C, Nd);
+          k1D = h * g1(Nc, Nd);
+          k2D = h * g1(Nc, Nd + k1D / 2);
+          k3D = h * g1(Nc, Nd + k2D / 2);
+          k4D = h * g1(Nc, Nd + k3D);
+          Nc = Nc + (k1C + 2 * k2C + 2 * k3C + k4C) / 6;
+          Nd = Nd + (k1D + 2 * k2D + 2 * k3D + k4D) / 6;
+        }
+        else{
+          k1C = h * f2(Nc, Nd);
+          k2C = h * f2(Nc + k1C / 2, Nd);
+          k3C = h * f2(Nc + k2C / 2, Nd);
+          k4C = h * f2(Nc + k3C, Nd);
+          k1D = h * g2(Nc, Nd);
+          k2D = h * g2(Nc, Nd + k1D / 2);
+          k3D = h * g2(Nc, Nd + k2D / 2);
+          k4D = h * g2(Nc, Nd + k3D);
+          Nc = Nc + (k1C + 2 * k2C + 2 * k3C + k4C) / 6;
+          Nd = Nd + (k1D + 2 * k2D + 2 * k3D + k4D) / 6;
+        }
+        if(fabs(t-23.5) < EPS){ // Se tiver no tempo 23.5 horas
+         switch (i) {
+           case 0: fprintf(dados1, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 1: fprintf(dados2, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 2: fprintf(dados3, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 3: fprintf(dados4, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 4: fprintf(dados5, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 5: fprintf(dados6, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 6: fprintf(dados7, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 7: fprintf(dados8, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 8: fprintf(dados9, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+           case 9: fprintf(dados10, "%f  %f\n", Nc+Nd, Nc/(Nc+Nd)); break;
+          }
+          t = 0;
+          dia++;
+          Nc = Nc / Df;
+          Nd = Nd / Df;
+       }
+      }// if t > 3
      } // while dia
    } // for i
 
