@@ -104,13 +104,22 @@ ni = 73.90
 r=348.145
 
 
-#Parametro para o unidimensional, segundo teste, promissor:
+#Parametro para o unidimensional, deu tudo certinho:
 c=1.0
 b=5.0799
 beta = 5.831E-6
 delta = 1.6369
 lamb = 150.54
 ni = 2480.0 #507.21 # 2480.0
+r=348.145
+
+#Parametro normalizando o tempo:
+c=9.61E-3
+b=4.88E-2
+beta =  # 5.831E-6  #1.7185E-5  (unidimensional, bidimensional)
+delta = 1.57E-2
+lamb = 1.45
+ni = #4.88 # 23.8 # 0.710 (unidimensional 1, unidimensional 2, bidimensional)
 r=348.145
 
 
