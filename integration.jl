@@ -1,26 +1,27 @@
-N0=175000/750.0
-gamma=0.439
-T=20.5
-k=1.76e5
+
+#########Modelo deles ##########
+
 theta=750.0
+N0=175000/theta
+gamma=0.472
+T=20.5
+k=1.95e5
 
 
-int_N1 = k*log((k+N0*(exp(gamma*T)-1))/k)
-int_N2 = k*N0*(gamma*T/N0+log((N0+(k-N0)*exp(-gamma*T))/k)/N0+1/k-1/(N0+(k-N0)*exp(-gamma*T)))
+int_nasc = k*log((k+N0*(exp(gamma*T)-1))/k)
+int_morte = k*N0*(gamma*T/N0+log((N0+(k-N0)*exp(-gamma*T))/k)/N0+1/k-1/(N0+(k-N0)*exp(-gamma*T)))
 int_theta = N0*(theta-1)
 
 
 N(t)=k*N0*exp(gamma*t)/(k+N0*(exp(gamma*t)-1))
 f(t)=(N(t))^2
 
-quadgk(f,0,T)
-quadgk(N,0,T)
+gamma*quadgk(N,0,T)[1]
+(gamma/k)*quadgk(f,0,T)[1]
 
+N_estavel= k*(1-theta*exp(-gamma*T))/(1-exp(-gamma*T))
 
-
-
-
-
+###   Modelo nosso ####3
 
 c=1.0
 b=5.0799
