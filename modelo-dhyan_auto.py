@@ -10,7 +10,7 @@ lamb = 150.54
 ni = 2480.0 # 507.21 ou 2480.0
 r=348.145
 
-T=.0004
+T=0.000333
 P=1
 b=b*T*P
 c=c*T*P
@@ -19,7 +19,7 @@ ni = ni*T
 lamb=lamb*T*P
 r=r*P
 
-t_max = .0027/T
+t_max = .0023/T
 t = arange(0,t_max, .00000001/T)
 nmenos = ((lamb+b-c)/r + lamb*beta-sqrt(((lamb+b-c)/r + lamb*beta)**2-4*lamb*beta*(lamb+b-c+ni)/r))/(2*lamb*beta/r)
 nc_init = 800
@@ -34,20 +34,20 @@ for i in range(0,18):
     if x0[0] < nmenos:
         plt.semilogy(t, x, 'k--') # 'r-'
     else:
-        plt.semilogy(t, x, 'k:') #'b-'
+        plt.semilogy(t, x, 'k') #'b-'
 
-x0 = array([nmenos-50])
+x0 = array([nmenos-15])
 x = odeint(LV, x0, t, (b,c, beta, ni, lamb, r))
 plt.semilogy(t, x, 'k--') # 'r-'
 
-x0 = array([nmenos+50])
+x0 = array([nmenos+15])
 x = odeint(LV, x0, t, (b,c, beta, ni, lamb, r))
-plt.semilogy(t, x, 'k:') #'b-'
+plt.semilogy(t, x, 'k') #'b-'
 
 ni=ni/T
 plt.ylim(500,1100000)
 plt.xlim(-0.1,t_max)
-plt.xlabel("Dias")
-plt.ylabel("Populacao total")
+plt.xlabel("Time (Days)")
+plt.ylabel("Population (N)")
 plt.title(r"$\nu$ = {}".format(ni))
 plt.show()

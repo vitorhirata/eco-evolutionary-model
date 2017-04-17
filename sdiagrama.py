@@ -6,7 +6,7 @@ from scipy.integrate import odeint
 
 def add_arrow_to_line2D(
     axes, line, arrow_locs=[0.2, 0.4, 0.6, 0.8],
-    arrowstyle='-|>', arrowsize=1, transform=None):
+    arrowstyle='-|>', arrowsize=1.5, transform=None):
     """
     Add arrows to a matplotlib.lines.Line2D at selected locations.
 
@@ -125,7 +125,12 @@ for i in range(15):
 
     # print the line and the markers in seperate steps
     line = ax.plot(x, y, 'k-')
-    add_arrow_to_line2D(ax, line, arrow_locs=np.linspace(0.01, 0.9, 6))
+
+    arrow_locs=np.linspace(0.01, 0.9, 6)
+    if i == 4:
+        arrow_locs = np.append(arrow_locs, (0.9698, 0.9716, 0.974))
+
+    add_arrow_to_line2D(ax, line, arrow_locs)
 
 
 

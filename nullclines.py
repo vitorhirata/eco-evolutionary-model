@@ -14,7 +14,6 @@ def p3(N):
 
 N = np.logspace(2.6, 4.7756, 100000)
 
-plt.figure()
 plt.plot(N, p3(N), 'k-') # 'r-'
 plt.axhline(y=1, color='k', linestyle = '--') # color='c'
 plt.axhline(y=0,color='k', linestyle = '--') # color='c'
