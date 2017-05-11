@@ -74,7 +74,7 @@ ni = 314.461
 r=132.659
 
 
-###  Bateu tudo certinho com o experimental  ####
+###  Parâmetro do bidimensional - Final  ####
 c=1.0
 b=5.0799
 beta = 1.7185E-5
@@ -84,27 +84,7 @@ ni = 73.90
 r=348.145
 
 
-#### Normalizando o tempo   #####
-c=0.00045
-b=0.002285955
-beta = 0.000017185
-delta = 0.000736605
-lamb = 0.067743
-ni = 0.033255
-r=348.145
-
-
-#Parametro para o unidimensional, primeiro teste:
-c=1.0
-b=5.0799
-beta = 6.08E-6
-delta = 1.6369
-lamb = 150.54
-ni = 73.90
-r=348.145
-
-
-#Parametro para o unidimensional, deu tudo certinho:
+# Parâmetro do unidimensional -  Final   ###
 c=1.0
 b=5.0799
 beta = 5.831E-6
@@ -112,18 +92,6 @@ delta = 1.6369
 lamb = 150.54
 ni = 2480.0 #507.21 # 2480.0
 r=348.145
-
-#Parametro normalizando o tempo:
-c=9.61E-3
-b=4.88E-2
-beta =  # 5.831E-6  #1.7185E-5  (unidimensional, bidimensional)
-delta = 1.57E-2
-lamb = 1.45
-ni = #4.88 # 23.8 # 0.710 (unidimensional 1, unidimensional 2, bidimensional)
-r=348.145
-
-
-
 
 Pontos fixos:
 
