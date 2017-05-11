@@ -21,18 +21,34 @@ def a21(N):
 def a22(N):
     return (delta*(1-beta*N))*(N/r-1)-ni
 
-
-N = np.logspace(1.6, 4.8056, 100000)
-
-plt.axvline(x=57800,color='k', linestyle = '--') # color='c'
-
-plt.plot(N, a11(N), 'k', linewidth=1)
-plt.plot(N, a12(N), 'r', linewidth=1)
-plt.plot(N, a21(N), 'g', linewidth=1)
-plt.plot(N, a22(N), 'c', linewidth=1)
-
+#### Seta configuracoes iniciais
+ax = plt.figure().add_subplot(111)
 plt.xlabel("Population (N)")
-plt.ylabel("Payoff value")
-plt.xlim([100, 100000])
-plt.xscale('log')
+plt.ylabel("Effective Payoffs")
+plt.xticks([55000, 56000,57000, 57800,59000, 60000, 61000])
+ax.xaxis.set_ticklabels(['55000', '56000','57000', r'$N_3$', '59000', '60000', '61000'])
+
+#### Legendas
+ax.text(56400, 560, 'Harmony\nGame', fontsize = 18)
+ax.text(58200, 100, 'PD\nGame', fontsize = 18)
+ax.text(54700, 780, r'$\overline{a_{21}}$', fontsize = 18)
+ax.text(54700, -130, r'$\overline{a_{22}}$', fontsize = 18)
+ax.text(56300, 300, r'$\overline{a_{12}}$', fontsize = 18)
+ax.text(59050, 300, r'$\overline{a_{11}}$', fontsize = 18)
+
+###  Plota as curvas
+N = np.arange(54500, 61000, 50)
+plt.axvline(x=57800,color='k', linestyle = '--', linewidth = 1.5)
+plt.axvline(x=55814.2,color='k', linestyle = ':', linewidth = 1.5)
+plt.axvline(x=59784,color='k', linestyle = ':', linewidth = 1.5)
+plt.plot(N, a11(N), 'k', linewidth=1.8) # 'k',
+plt.plot(N, a12(N), 'k', linewidth=1.8) # 'r'
+plt.plot(N, a21(N), 'k', linewidth=1.8) # 'g'
+plt.plot(N, a22(N), 'k', linewidth=1.8) # 'c'
+plt.axis([54500, 61000, -500, 1000])
 plt.show()
+
+#### Grafico do espaco inteiro
+#N = np.logspace(1.6, 4.8056, 100000)
+#plt.xlim([100, 100000])
+#plt.xscale('log')

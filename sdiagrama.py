@@ -86,7 +86,7 @@ x0.append([400, 0.1])
 x0.append([330, 0.88])
 x0.append([300, 0.6])
 x0.append([1393.0, 0.01])
-x0.append([440, 1])
+x0.append([400, 1])
 x0.append([600, 1])
 x0.append([17000, 0.25])
 x0.append([450, 0.75])
@@ -139,12 +139,15 @@ N = np.arange(400, 40000, 1)
 #plot(N,p3(N),'b',linewidth=3)
 plt.plot(N,p33(N),'k--',linewidth=1.5) # 'r-'
 #Coloca pontos
-plt.plot([516,57800,59600],[1,0.086,1],'ko')
+plt.plot([516,57800,59600],[1,0.086,1],'ko', markersize= 8)
 
 #plot the solution
 plt.title('')
 plt.xlabel("Population (N)")
 plt.ylabel("Fraction of cooperators (p)")
-plt.axis([65, 100000, -0.01, 1.01])
 plt.xscale('log')
+plt.xticks(list(plt.xticks()[0]) + [1/beta])  # adiciona um ponto
+plt.axis([65, 100000, -0.01, 1.01])
+
+ax.xaxis.set_ticklabels(['','','','','','','','','','','','','','','','','', '', '', '', '', '', '','','', '', '','','','','','','','','','', r'$1/\beta$'],minor=True) ## put legend in one tick
 plt.show()
