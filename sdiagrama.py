@@ -99,14 +99,18 @@ def p3(N):
 def p33(N):
     return (ni-delta*(N/r-1)*(1-beta*N))/((N/r-1)*(b-c+(1-beta*N)*(lamb-delta)))
 
+def p333(N):
+    X = b-c+(1-beta*N)*(lamb-delta)
+    return ((X*r-N*(1-beta*N)*delta)+np.sqrt((X*r-N*(1-beta*N)*delta)**2+4*N*X*r*((1-beta*N)*delta+ni)))/(2*N*X)
+
 # the function still receives only `x`, but it will be an array, not a number
 def LV(x, t, b, c, beta, delta, lamb, ni, r):
     # in python, arrays are numbered from 0, so the first element
     # is x[0], the second is x[1]. The square brackets `[ ]` define a
     # list, that is converted to an array using the function `array()`.
     # Notice that the first entry corresponds to dV/dt and the second to dP/dt
-    return np.array([ x[0]*(x[0]/r-1)*(b-c)*x[1]+x[0]*(x[0]/r-1)*(1-x[0]*beta)*(x[1]*lamb+delta*(1-x[1]))-ni*x[0],
-                   (x[0]/r-1)*x[1]*(1-x[1])*(-c+(1-x[0]*beta)*(lamb-delta)) ])
+    return np.array([ x[0]*(x[1]*x[0]/r-1)*((b-c)*x[1]+(1-x[0]*beta)*(x[1]*lamb+delta*(1-x[1])))-ni*x[0],
+                      (x[0]*x[1]/r-1)*x[1]*(1-x[1])*(-c+(1-x[0]*beta)*(lamb-delta)) ])
 
 # call the function that performs the integration
 # the order of the arguments is as below: the derivative function,
@@ -137,7 +141,7 @@ for i in range(15):
 # Coloca a nullcline
 N = np.arange(400, 40000, 1)
 #plot(N,p3(N),'b',linewidth=3)
-plt.plot(N,p33(N),'k--',linewidth=1.5) # 'r-'
+plt.plot(N,p333(N),'k--',linewidth=1.5) # 'r-'
 #Coloca pontos
 plt.plot([516,57800,59600],[1,0.086,1],'ko', markersize= 8)
 
