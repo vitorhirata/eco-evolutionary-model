@@ -1,5 +1,7 @@
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter
 
 c=1.0
 b=5.0799
@@ -23,10 +25,10 @@ def a22(N):
 
 #### Seta configuracoes iniciais
 ax = plt.figure().add_subplot(111)
-plt.xlabel("Population (N)")
+plt.xlabel(r"Population ($N \times 10^4$)")
 plt.ylabel("Effective Payoffs")
 plt.xticks([55000, 56000,57000, 57800,59000, 60000, 61000])
-ax.xaxis.set_ticklabels(['55000', '56000','57000', r'$N_3$', '59000', '60000', '61000'])
+ax.xaxis.set_ticklabels(['5.5', '5.6','5.7', r'$N_3$', '5.9', '6.0', '6.1'])
 
 #### Legendas
 ax.text(56400, 560, 'Harmony\nGame', fontsize = 18)
@@ -46,7 +48,12 @@ plt.plot(N, a12(N), 'k', linewidth=1.8) # 'r'
 plt.plot(N, a21(N), 'k', linewidth=1.8) # 'g'
 plt.plot(N, a22(N), 'k', linewidth=1.8) # 'c'
 plt.axis([54500, 61000, -500, 1000])
-plt.show()
+#plt.show()
+
+#ax.xaxis.set_major_formatter(ScalarFormatter(useMathText=True))
+#ax.ticklabel_format(style="sci",axis="x",scilimits=(0,0))
+matplotlib.rcParams.update({'font.size': 20})
+plt.savefig('image/effective.eps', dpi=5000, bbox_inches = "tight", format="eps")
 
 #### Grafico do espaco inteiro
 #N = np.logspace(1.6, 4.8056, 100000)

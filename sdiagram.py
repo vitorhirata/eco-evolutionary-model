@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 import matplotlib.patches as mpatches
@@ -149,5 +150,8 @@ plt.xscale('log')
 plt.xticks(list(plt.xticks()[0]) + [1/beta])  # adiciona um ponto
 plt.axis([65, 100000, -0.01, 1.01])
 
-ax.xaxis.set_ticklabels(['','','','','','','','','','','','','','','','','', '', '', '', '', '', '','','', '', '','','','','','','','','','', r'$1/\beta$'],minor=True) ## put legend in one tick
-plt.show()
+ax.xaxis.set_ticklabels(['','','','','','','','','','','','','','','','','', '', '', '', '', '', '','','', '', '','','','','','','','','','', r'$\beta^{-1}$'],minor=True) ## put legend in one tick
+#plt.show()
+
+matplotlib.rcParams.update({'font.size': 20})
+plt.savefig('image/sdiagram.eps', dpi=5000, bbox_inches = "tight", format="eps")

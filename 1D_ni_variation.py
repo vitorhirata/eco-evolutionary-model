@@ -1,4 +1,5 @@
 from numpy import *
+import matplotlib
 import matplotlib.pyplot as plt
 
 c=1.0
@@ -14,9 +15,11 @@ k2 = 3.37E-10
 
 Nestavel=[]
 Ninstavel=[]
-ni = range(100,25000,10)
+ni = range(100,25000000,10)
 niEst=[]
 niInst=[]
+
+soma=[]
 
 for i in range(0,len(ni)):
     variacao = ((lamb+b-c)/r + lamb*beta)**2-4*lamb*beta*(lamb+b-c+ni[i])/r
@@ -27,14 +30,19 @@ for i in range(0,len(ni)):
             Ninstavel.append(((lamb+b-c)/r + lamb*beta-sqrt(((lamb+b-c)/r + lamb*beta)**2-4*lamb*beta*(lamb+b-c+ni[i])/r))/(2*lamb*beta/r))
             niInst.append(ni[i]) #niInst.append(k1*ni[i]+k2*ni[i]*ni[i])
 
-
 plt.semilogy(niEst, Nestavel,'k', linewidth=2) # 'b-'
 plt.semilogy(niInst, Ninstavel, 'k--', linewidth=2) # 'r-'
 plt.xlabel(r"Dilution ($ \nu $)")
 plt.ylabel("Population (N)")
 #plt.ylim(150,1000000)
 #plt.xlim(0,25000)
-plt.show()
+#plt.show()
+
+matplotlib.rcParams.update({'font.size': 20})
+plt.savefig('image/boomerang.eps', dpi=5000, bbox_inches = "tight", format="eps")
+
+
+
 
 # Em 667 os pontos fixos sao aproximadamente 110069 e 885
 

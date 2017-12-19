@@ -1,2 +1,4 @@
 txt/
-a.out
+image/
+*.out
+*.txt
