@@ -2,7 +2,7 @@
 
 
 ## About
-This project contain the simulation I used during my Scientific Initiation, done at the [Biophysics Group](http://fig.if.usp.br/%7Ebiofisic/estudantes_en.html) of the Departamento de Física Geral, part of the [Instituto de Física](http://portal.if.usp.br/ifusp/en/welcome-ifusp) of the Universidade de São Paulo. This was part of a project together with Profa. Dr. Carla Goldman, Dhyan V. H. Kuraoka and Pedro Ribeiro de Almeida, funded by the São Paulo Research Foundation (FAPESP), Brazil under Grant No. 2015/17395-3.
+This project contain the simulation I used during my Scientific Initiation, done at the [Biophysics Group](http://fig.if.usp.br/%7Ebiofisic/index_en.html) of the Departamento de Física Geral, part of the [Instituto de Física](http://portal.if.usp.br/ifusp/en/welcome-ifusp) of the Universidade de São Paulo. This was part of a project together with Profa. Dr. Carla Goldman, Dhyan V. H. Kuraoka and Pedro Ribeiro de Almeida, funded by the São Paulo Research Foundation (FAPESP), Brazil under Grant No. 2015/17395-3.
 
 
 ## The sitution modeled
