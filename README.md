@@ -13,3 +13,8 @@ This work simulates two competing strains of the budding yeast *Saccharomyces ce
 The work done here got published at the Journal of Theoretical Biology, and can be cited as:
 
 Vitor H. Sanches, Dhyan V.H. Kuraoka, Pedro R. Almeida, Carla Goldman, A phenomenological analysis of eco-evolutionary coupling under dilution, Journal of Theoretical Biology, Volume 438, 7 February 2018, Pages 156-164, ISSN 0022-5193, doi:[10.1016/j.jtbi.2017.11.019](https://doi.org/10.1016/j.jtbi.2017.11.019).
+
+## Future Steps
+- Comment better the code
+- Improve README and description of every file
+- Add images
